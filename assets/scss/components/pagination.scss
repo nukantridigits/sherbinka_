@@ -1,0 +1,46 @@
+@import "../mixins&vars";
+
+.pagination {
+    display: flex;
+    align-items: center;
+    &_wrapper {
+        margin: 50px 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    li {
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: inherit;
+            height: inherit;
+        }
+        &:not(.active) {
+            a {
+                transition: .3s;
+                &:hover {
+                    color: $lima;
+                    transition: .3s;
+                }
+            }
+        }
+        &.btn {
+            margin-right: 7px;
+        }
+        &.arrow {
+            &_left {
+                margin-right: 17px;
+            }
+            &_right {
+                margin-left: 10px;
+            }
+        }
+        &.active {
+            a {
+                pointer-events: none;
+            }
+        }
+    }
+}

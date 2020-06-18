@@ -1,0 +1,63 @@
+// Colors
+// -------------------------
+$indigo: #253C4D;
+$lima: #A7C972;
+$disable: #949494;
+
+// Breakpoints
+// -------------------------
+$desktopWidth: 1024;
+$tabWidth: 768;
+
+@mixin mob {
+    @media (max-width: #{$tabWidth - 1}px) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (min-width: #{$tabWidth}px) and (max-width: #{$desktopWidth - 1}px) {
+        @content;
+    }
+}
+
+@mixin touch {
+    @media (max-width: #{$desktopWidth - 1}px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktopWidth}px) {
+        @content;
+    }
+}
+
+@mixin tablet-desktop {
+    @media (min-width: #{$tabWidth}px) {
+        @content;
+    }
+}
+
+// VUEjs-transitions
+// -------------------------
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-active {
+    opacity: 0;
+}
+
+.slide-leave-active,
+.slide-enter-active {
+    transition: .4s;
+}
+
+.slide-enter {
+    transform: translate(100%, 0);
+}
+
+.slide-leave-to {
+    transform: translate(-100%, 0);
+}

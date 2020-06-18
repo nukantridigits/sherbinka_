@@ -1,0 +1,36 @@
+@media all and (min-width: 1024px) {
+    #calculator #domclick__calculator {
+        flex: 2;
+    }
+    #calculator #domclick__result {
+        flex: 1;
+    }
+    #calculator .dcCalc_input-row-desktop__message {
+        bottom: -35px;
+    }
+
+    #calculator .dcCalc_result-calculation__value {
+        width: 150px;
+    }
+
+}
+
+@media all and (max-width: 1023px) {
+    #calculator #domclick__mortgage {
+        max-width: none;
+        flex-direction: column;
+    }
+
+    #calculator #domclick__calculator {
+        flex: auto;
+        order: 2;
+    }
+
+    #calculator #domclick__result {
+        margin: 0 0 30px;
+        width: 100%;
+        order: 1;
+        flex: auto;
+    }
+
+}

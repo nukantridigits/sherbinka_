@@ -1,0 +1,291 @@
+@import "../../mixins&vars";
+
+.price_filter {
+    @include touch {
+        width: 100%;
+    }
+    @include desktop {
+        width: 357px;
+    }
+    input {
+        @include mob{
+            width: 80px;
+        }
+        @include tablet-desktop {
+            width: 122px;
+        }
+    }
+    .vue-slider {
+        width: 100%!important;
+        @include mob{
+            margin-bottom: 7px;
+        }
+    }
+    .vue-slider-dot-tooltip {
+        display: none !important;
+        transition: .3s;
+        visibility: visible;
+        opacity: 1;
+        @include mob {
+            bottom: -8px;
+        }
+    }
+
+    .vue-slider-dot-tooltip.hide {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+
+    .vue-slider-rail {
+        @include mob {
+            height: 2px;
+        }
+        &:before {
+            content: '';
+            display: block;
+            background-color: $indigo;
+            width: 4px;
+            @include mob {
+                width: 3px;
+            }
+            height: 29px;
+            border-radius: 34px;
+            position: absolute;
+            top: -13px;
+            left: -3px;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            background-color: $indigo;
+            width: 4px;
+            @include mob {
+                width: 3px;
+            }
+            height: 29px;
+            border-radius: 34px;
+            position: absolute;
+            top: -13px;
+            right: -3px;
+        }
+
+        .vue-slider-process {
+            background-color: $lima;
+        }
+    }
+
+    .vue-slider-dot-tooltip-text {
+        color: $indigo;
+        white-space: nowrap;
+        @include mob {
+            font-size: 10px;
+            line-height: 12px;
+            letter-spacing: 0.5px;
+        }
+    }
+
+    .vue-slider-dot-tooltip-inner {
+        padding-top: 16px;
+        @include mob {
+            padding-top: 0;
+        }
+    }
+
+    .vue-slider-process + .vue-slider-dot{
+        .vue-slider-dot-handle{
+            left: -2px;
+        }
+    }
+
+    .vue-slider-dot {
+        .vue-slider-dot-handle{
+            left: 1px;
+        }
+    }
+
+    .vue-slider-rail {
+        //первый тултип
+        .vue-slider-process + .vue-slider-dot {
+            .vue-slider-dot-tooltip {
+                &:before {
+                    display: block;
+                    color: $indigo;
+                    content: 'от';
+                    margin-right: 5px;
+                    font-size: 15px;
+                    line-height: 18px;
+                    letter-spacing: 0.5px;
+                    @include mob {
+                        font-size: 10px;
+                        line-height: 12px;
+                    }
+                }
+            }
+        }
+        //второй тултип
+        .vue-slider-dot {
+            .vue-slider-dot-tooltip {
+                display: flex;
+                align-items: baseline;
+                &:before {
+                    display: block;
+                    color: $indigo;
+                    content: 'до';
+                    margin-right: 5px;
+                    font-size: 15px;
+                    line-height: 18px;
+                    letter-spacing: 0.5px;
+                    @include mob {
+                        font-size: 10px;
+                        line-height: 12px;
+                    }
+                }
+                &:after {
+                    display: block;
+                    width: 10px;
+                    height: 10px;
+                    @include mob {
+                        width: 7px;
+                        height: 7px;
+                    }
+                    content: '';
+                    margin-left: 5px;
+                    line-height: 10px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-image: url(~assets/icons/ruble.svg);
+                    //opacity: .7;
+                }
+            }
+        }
+    }
+
+    @include desktop() {
+        .year_filter_wrapper {
+            margin-top: 20px;
+        }
+    }
+
+    /* component style */
+    .vue-slider-disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    /* rail style */
+    .vue-slider-rail {
+        background-color: $indigo;
+        border-radius: 15px;
+    }
+
+    /* process style */
+    .vue-slider-process {
+        background-color: $indigo;
+        border-radius: 15px;
+    }
+
+    /* dot style */
+    .vue-slider-dot-handle {
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: $indigo;
+        position: absolute;
+        top: -1px;
+        left: -1px;
+    }
+
+    .vue-slider-dot-handle-disabled {
+        cursor: not-allowed;
+        background-color: #ccc;
+    }
+
+    .vue-slider-dot-tooltip-inner {
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: 0.5px;
+        text-align: center;
+        color: $lima;
+    }
+
+    .vue-slider-dot-tooltip-top {
+        top: -15px;
+    }
+
+    .vue-slider-dot-tooltip-inner-top::after {
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        height: 0;
+        width: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 5px;
+        border-top-color: inherit;
+    }
+
+    .vue-slider-dot-tooltip-inner-bottom::after {
+        bottom: 100%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        height: 0;
+        width: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 5px;
+        border-bottom-color: inherit;
+    }
+
+    .vue-slider-dot-tooltip-inner-left::after {
+        left: 100%;
+        top: 50%;
+        transform: translate(0, -50%);
+        height: 0;
+        width: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 5px;
+        border-left-color: inherit;
+    }
+
+    .vue-slider-dot-tooltip-inner-right::after {
+        right: 100%;
+        top: 50%;
+        transform: translate(0, -50%);
+        height: 0;
+        width: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 5px;
+        border-right-color: inherit;
+    }
+
+    .vue-slider-dot-tooltip-wrapper {
+        opacity: 1;
+        transition: all 0.3s;
+    }
+
+    .vue-slider-dot-tooltip-wrapper-show {
+        opacity: 1;
+    }
+
+    @include mob() {
+
+    }
+
+    @include tab() {
+
+    }
+
+    @include touch() {
+
+    }
+
+    @include desktop() {
+
+    }
+}

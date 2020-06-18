@@ -1,0 +1,478 @@
+@import "../mixins&vars";
+
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+.slick-list {
+    overflow: visible;
+}
+
+.slick_slider_comp {
+    position: relative;
+}
+
+.hide-content {
+    .slide_content {
+        display: none;
+    }
+    .slide_inner{
+        background-size: cover!important;
+    }
+}
+
+.slider_wrapper {
+    @include desktop {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.content .slider_title{
+    @include mob{
+        padding-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    @include tab{
+        padding-left: 30px;
+        margin-bottom: 15px;
+    }
+
+    @include desktop{
+        padding-left: 30px;
+        margin-bottom: 20px;
+    }
+}
+
+a{
+    &.slide{
+        display: block;
+    }
+}
+
+@include desktop {
+    .slider_wrapper:not(.full-width-desktop) {
+        .slide {
+            &_default {
+                .slide {
+                    width: 960px;
+                    height: 600px;
+                    margin: 0 auto;
+                    &_desktop_image{
+                        width: 100%;
+                    }
+                    &_inner {
+                        height: calc(100% - 26px);
+                        //padding: 150px 50px;
+                        //background-size: cover;
+                        //background-repeat: no-repeat;
+                        box-shadow: 0 7px 20px rgba(37, 60, 77, 0.2);
+                        border-radius: 10px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .slider_wrapper {
+        &.slider_sm {
+            @include desktop {
+                width: 990px;
+                .slick-dots {
+                    padding-top: 34px;
+                }
+                .slick_navigation_wrapper {
+                    top: 35%;
+                    width: 1020px;
+                    left: calc(50% - 510px);
+                    .slick_navigation {
+                        .arrow_left {
+                            left: -14px;
+                        }
+                        .arrow_right {
+                            right: -14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.slide {
+    &_default {
+        @include tab{
+                width: 630px;
+                height: 630px;
+        }
+        .slide {
+            &_inner {
+                background-size: cover;
+            }
+            &_content {
+                margin: 0 auto;
+                @include desktop {
+                    padding-top: 212px;
+                }
+                .title {
+                    font-weight: 800;
+                    opacity: .96;
+                    text-transform: initial;
+                    @include mob{
+                        text-transform: uppercase;
+                        font-size: 18px;
+                        line-height: 23px;
+                        letter-spacing: 1px;
+                    }
+                    @include tab{
+                        font-size: 40px;
+                        line-height: 45px;
+                        letter-spacing: 1.5px;
+                    }
+                    @include desktop {
+                        font-size: 55px;
+                        line-height: 60px;
+                        letter-spacing: 1.5px;
+                        max-width: 700px;
+                    }
+                }
+            }
+        }
+    }
+    &_developer {
+        .title {
+            padding: 16px 0 0 30px;
+        }
+        .slide {
+            width: 300px;
+            height: 300px;
+            display: block;
+            &_inner {
+                background-size: cover;
+                border-radius: 10px;
+            }
+        }
+        @include touch {
+            .slide {
+                display: block;
+                margin: 0 auto;
+                &_inner {
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+            .title {
+                display: block;
+                width: 86.252vw;
+                margin: 0 auto;
+                padding: 15px 0 0 20px;
+            }
+        }
+        @include tab{
+            width: 630px;
+            height: 630px;
+        }
+    }
+    &_construction_progress {
+        .slide {
+            border-radius: 10px;
+            &_inner {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 10px;
+            }
+            @include desktop {
+                width: 300px;
+                cursor: pointer;
+                &_inner {
+                    width: 300px;
+                    height: 300px;
+                }
+                &_title {
+                    padding: 0 0 17px 30px;
+                }
+            }
+            @include mob() {
+                margin: 0 auto;
+                overflow: hidden;
+                //border-radius: 0;
+                box-shadow: none;
+                &_inner {
+                    //border-radius: 0;
+                }
+                &_title {
+                    display: block;
+                    width: inherit;
+                    margin: 0 auto;
+                    padding: 0 0 5px 20px;
+                    font-size: 10px;
+                    line-height: 12px;
+                }
+            }
+        }
+    }
+}
+
+@include touch {
+    .slider_wrapper {
+        padding-bottom: 20px;
+        overflow: hidden;
+        &.full-width-desktop {
+            .slide {
+                width: 100vw;
+                transform: none;
+                .title{
+                    width: 73.25%;
+                    margin: 0 auto;
+                    padding-top: 172px;
+                }
+            }
+        }
+    }
+
+    .slick_navigation_wrapper {
+        display: none;
+    }
+}
+
+@include mob{
+    .slick-slide {
+        .slide {
+            height: 388px;
+            width: 86.25%;
+        }
+    }
+}
+
+@include touch {
+    .slick-slide {
+        .slide {
+            transition: all ease-in .3s;
+            transform: scaleY(0.9) translateY(5px);
+        }
+
+        &.slick-center {
+            margin-top: 0;
+            .slide {
+                width: 100%;
+                transform: scaleY(1) translateY(0);
+            }
+        }
+    }
+}
+
+@include tab{
+    .slider_wrapper{
+        &.full-width-desktop {
+            .slide {
+                .title{
+                    padding-top: 280px;
+                }
+            }
+        }
+    }
+    .slick-slide {
+        .slide {
+            height: 630px;
+            width: 630px;
+        }
+    }
+}
+
+@include tab{
+    .slider_wrapper {
+        padding-bottom: 30px;
+        &.top-slider {
+            overflow: hidden;
+            padding-bottom: 0;
+            .slide {
+                height: 100vh;
+            }
+        }
+    }
+}
+
+@include desktop {
+    .slider_wrapper {
+        padding-bottom: 30px;
+        &.top-slider {
+            overflow: hidden;
+            padding-bottom: 0;
+            .slide {
+                height: 100vh;
+            }
+        }
+    }
+    .slick-dots {
+        display: flex;
+        justify-content: center;
+        padding-top: 4px;
+        li {
+            margin-right: 7px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+            button {
+                cursor: pointer;
+                text-indent: -9999em;
+                text-transform: uppercase;
+                background-color: $indigo;
+                transition: background-color .3s;
+                border: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 34px;
+                height: 7px;
+                border-radius: 40px;
+            }
+            &.slick-active {
+                button {
+                    background-color: $lima;
+                }
+            }
+        }
+    }
+    .slick_navigation_wrapper {
+        position: absolute;
+        top: 44%;
+        width: 960px;
+        left: calc(50% - 480px);
+        .slick_navigation {
+            position: relative;
+            .arrow {
+                position: absolute;
+                top: 0;
+                cursor: pointer;
+                &_left {
+                    left: -52px;
+                }
+                &_right {
+                    right: -52px;
+                }
+            }
+        }
+    }
+}
+
+.slide {
+    color: $indigo;
+    margin: 0 auto;
+    border-radius: 10px;
+    @include touch {
+        box-shadow: 0 2.00545px 5.72985px rgba(37, 60, 77, 0.2);
+    }
+    &_inner {
+        display: flex;
+        justify-content: flex-end;
+        background-repeat: no-repeat;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+    &_content {
+        .title {
+            padding-bottom: 8px;
+        }
+        .descr {
+            margin-bottom: 10px;
+            line-height: 18px;
+            @include tab{
+                font-size: 14px;
+                letter-spacing: 0.5px;
+            }
+        }
+    }
+    a:not(.link) {
+        color: $indigo;
+        text-decoration: none;
+    }
+}
+
+.slide_default,.slide_developer{
+    @include touch {
+        .slide {
+            width: 86.25%;
+        }
+    }
+}
+
+//Advantages slider (index,post)
+.slide_with_text_link {
+    @include touch {
+        .slide {
+            width: 86.25%;
+            margin: 0 auto;
+            &_inner {
+                height: inherit;
+                padding: 18px 20px;
+                background-position: bottom;
+                background-size: contain;
+                margin-top: 3px;
+            }
+            &_content {
+                height: 100%;
+            }
+        }
+    }
+
+    @include tab{
+        width: 630px;
+        height: 630px;
+    }
+
+    @include desktop {
+        .slide {
+            width: 960px;
+            height: 490px;
+            img {
+                width: 630px;
+                object-fit: contain;
+                object-position: left bottom;
+            }
+            &_inner {
+                background-image: none !important;
+                height: 464px;
+                display: flex;
+                justify-content: space-between;
+                box-shadow: 0 7px 20px rgba(37, 60, 77, 0.2);
+            }
+            &_content {
+                padding: 180px 44px 0 43px;
+                .title {
+                    padding-bottom: 30px;
+                }
+                .descr {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+.full-width-desktop {
+    @include desktop{
+        .slide_inner{
+            background: none;
+            position: relative;
+        }
+        .slide_desktop_image{
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+    .slide{
+        &_inner{
+            @include mob{
+                border-radius: 0;
+            }
+        }
+    }
+}

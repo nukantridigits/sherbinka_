@@ -1,0 +1,131 @@
+@import "../mixins&vars";
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    height: 114px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: $indigo;
+    color: #fff;
+    .phone {
+        color: white;
+
+        text-align: center;
+        &_lg {
+            //font-family: RotondaC, sans-serif;
+        }
+    }
+    .madeby, .madeby:visited {
+        color: #fff;
+    }
+    @include touch() {
+        padding: 15px 17px;
+        justify-content: space-between;
+        font-size: 10px;
+        &_top {
+            display: flex;
+            justify-content: center;
+            .phones {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                .phone {
+                    &_sm {
+                        opacity: .8;
+                    }
+                    &_lg {
+                        font-size: 14px;
+                        line-height: 20px;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+        }
+        &_bottom{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &_left{
+                display: flex;
+                flex-direction: column;
+
+            }
+            .copyright {
+                opacity: .8;
+                order: 2;
+            }
+        }
+
+        &_social {
+            display: flex;
+            li{
+                margin-right: 12px;
+                &:last-of-type{
+                    margin-right: 0;
+                }
+            }
+            .social-icon{
+                width: 14px;
+                height: 14px;
+            }
+        }
+        .brand_logo {
+            display: none;
+        }
+    }
+}
+
+@include desktop() {
+    .footer {
+        height: 201px;
+        padding: 30px 25px 37px 40px;
+
+        justify-content: space-between;
+        &_top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .phones {
+                display: flex;
+                align-items: center;
+                .phone {
+                    &_lg {
+                        font-size: 24px;
+                        line-height: 24px;
+                        display: flex;
+                        align-items: center;
+                        letter-spacing: 3px;
+                        padding-right: 26px;
+                        //border-right: 1px solid rgba(255, 255, 255, .7);
+                    }
+                    &_sm {
+                        padding-left: 26px;
+                        font-size: 18px;
+                        line-height: 20px;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+        }
+        &_bottom {
+            display: flex;
+            align-items: center;
+            .copyright {
+                margin-right: 45px;
+            }
+            .footer_social {
+                display: flex;
+                li {
+                    &:first-of-type {
+                        margin-right: 15px;
+                    }
+                }
+            }
+            .madeby, .madeby:visited {
+                margin-left: auto;
+            }
+        }
+    }
+}

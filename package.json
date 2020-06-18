@@ -1,0 +1,52 @@
+{
+  "name": "Sherbinka",
+  "version": "1.0.0",
+  "description": "Sherbinka",
+  "author": "nukantri",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/feed": "^1.1.0",
+    "@sindresorhus/slugify": "^0.9.1",
+    "babel-preset-vue-app": "^2.0.0",
+    "contentful": "^7.9.1",
+    "intersection-observer": "^0.7.0",
+    "jquery": "^3.4.1",
+    "npm": "^6.13.0",
+    "nuxt": "^2.0.0",
+    "v-lazy-image": "^1.3.2",
+    "v-mask": "^2.0.2",
+    "vue-awesome-swiper": "^3.1.3",
+    "vue-currency-input": "^1.14.0",
+    "vue-inputmask": "^0.2.1",
+    "vue-lottie": "^0.2.1",
+    "vue-masked-input": "^0.5.2",
+    "vue-meta": "^2.2.2",
+    "vue-scrollbar-live": "^5.2.2",
+    "vue-slick": "^1.1.15",
+    "vue-slider-component": "^3.0.40",
+    "vue-smooth-scrollbar": "^0.1.2",
+    "vue-text-mask": "^6.1.2",
+    "vue2-google-maps": "^0.10.7",
+    "vuejs-paginate": "^2.1.0",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "@bazzite/nuxt-optimized-images": "^0.2.1",
+    "glob-all": "^3.1.0",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^8.0.0",
+    "imagemin-svgo": "^7.0.0",
+    "lqip-loader": "^2.2.0",
+    "node-sass": "^4.12.0",
+    "purgecss-webpack-plugin": "^1.6.0",
+    "sass-loader": "^7.2.0"
+  }
+}
